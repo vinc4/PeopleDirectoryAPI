@@ -44,6 +44,7 @@ namespace PeopleDirectory.Application
             postData.Add(new StringContent(subject), "subject");
             postData.Add(new StringContent(message), "text"); 
 
+
             var domainName = "sandbox9e13a518f7b84071b528300398441193.mailgun.org";
             var request = await client.PostAsync(_mailgunBaseUrl + domainName + "/messages", postData);
             var response = await request.Content.ReadAsStringAsync();
